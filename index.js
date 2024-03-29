@@ -33,10 +33,13 @@
       "Rocket": "Metal",
       "Groot": "Electro-House",
     };
-    // Function to generate playlist based on preferred genre
+
+// Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) { // Object.entries(): This method is used to convert an object into an array of its key-value pairs. In this case, guardians is the object being converted.
+  
   // Use the map() function to create playlists for each Guardian
   const playlists = Object.entries(guardians).map(([name, genre]) => { // The destructuring assignment [name, genre] extracts the name and genre from object.
+    
     // Filter the songs array based on the specified genre
     const songsOfPreferredGenre = songs.filter(song => song.genre === genre); // Here, it filters songs based on whether their genre matches the genre extracted from guardians.
 
@@ -44,7 +47,7 @@ function generatePlaylist(guardians, songs) { // Object.entries(): This method i
     const playlist = songsOfPreferredGenre
 
     // Add the guardian's name as the first element of the playlist
-    playlist.unshift({ name }); // it adds an object containing the name of the playlist to the beginning of the playlist array.
+    playlist.unshift({ name }); // this adds an object containing the name of the playlist to the beginning of the playlist array.
 
     return playlist;
   });
@@ -71,18 +74,19 @@ playlists.forEach((playlist) => {
   title.textContent = playlist[0].name + "'s Playlist";
   playlistDiv.appendChild(title)
 
-  // Create an unordered list
+  // Create an unordered list 
   const list = document.createElement('div');
 
   // Loop through each song in the playlist
   playlist.slice(1).forEach((song) => {
+    
     // Create a list items
     const listItem = document.createElement('div');
     listItem.className = 'song'; // creating space between the songs on the playlist 
 
     // Set the song title and artist
     const songTitle = document.createElement('span');
-    songTitle.textContent = `${song.title}`; // spacing created on line 96 to avoiding underlining until 'by ${song.artist}`. 
+    songTitle.textContent = `${song.title}`; 
     songTitle.className = 'song-title';
     const songArtist = document.createElement('span');
     songArtist.textContent = ` by ${song.artist}`;
@@ -106,5 +110,5 @@ playlists.forEach((playlist) => {
 document.body.appendChild(playlistsDiv);
 }
 
-// calling  the generatePlaylist function
+// Calling the generatePlaylist function
 generatePlaylist(guardians, songs);
