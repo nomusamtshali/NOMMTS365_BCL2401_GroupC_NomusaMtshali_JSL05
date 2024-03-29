@@ -1,52 +1,29 @@
 # [JSL05] Submission: Galaxy Playlist Generator
 
-You will:
-1. Use the provided Starter Code Repository: https://github.com/CodeSpace-Academy/Module_5_StudentNo_Classcode_Group_Name-Surname_JSL05
-2. Code your solution.
-3. Commit changes to your GitHub repository.
-4. Submit the GitHub Repository Link to the LMS [JSL05] Submission Project Tab.
+# Project Overview
 
-Check out the practice challenges on Scrimba here: https://scrimba.com/playlist/pXXzN5GT6
+- In this project, I combined my knowledge of JavaScript arrays and the `map()` function to create a personalized "Awesome Mix" playlist for each of the Guardians of the Galaxy. My task was to filter and organize songs based on each Guardian's musical preference, displaying a playlist tailored just for them.
 
-### Galaxy Playlist Generator
+# Elements Included
 
-In this challenge, you'll combine your knowledge of JavaScript arrays and the `map()` function to create a personalized "Awesome Mix" playlist for each of the Guardians of the Galaxy. Your task is to filter and organize songs based on each Guardian's musical preference, displaying a playlist tailored just for them.
+- Code that includes the necessary modifications to meet the project requirements.
+- GitHub repository that contains the updated code files.
 
-![alt text](JSL05_solution.png)
+# Reflections
 
-#### Instructions:
+## Areas of Mastery
 
-1. **Expand the Songs Array**: Add at least five songs to the `songs` array, each with `title`, `artist`, and `genre`.
-2. **Assign Preferences**: Complete the `guardians` object by assigning each Guardian their preferred music genre.
-3. **Generate Playlists**: Implement the `generatePlaylist` function. Use the `map()` function to create a personalized playlist for each Guardian based on their genre preference.
-4. **Display Playlists**: Dynamically create and append elements to the `#playlists` div to display each Guardian's playlist. Include the Guardian's name and their list of songs.
-5. **Test Your Application**: Ensure that your application correctly filters songs by genre for each Guardian and displays the playlists on the web page.
+- Throughout this project, there were many new things I learnt and most of them are still a bit confusing to me, which is why I believe there are no areas of mastery regarding the map() function as an array method.
 
-## What You Need to Do:
+## Challenges Faced
 
-1. Clone the provided Starter Code Repository to your local development environment (e.g., VSCode): https://github.com/CodeSpace-Academy/Module_5_StudentNo_Classcode_Group_Name-Surname_JSL05
-2. Open the cloned project in your code editor.
-3. Code your solution for each of the challenges as per the provided instructions.
-4. Commit your changes to your local Git repository with meaningful commit messages.
-5. Push your local Git repository to your GitHub account.
-6. Verify that the changes have been successfully pushed to your GitHub repository.
+- Throughout this project, there were many challenges that I faced, most of them being debugging issues. One major issue I faced during the process was figuring out the proper syntax for a map() function, this challenge set me back a long while as I tried to find a solution. Another big challenge I faced a was when I wanted to display the playlist, and simply could not figure out how to code a solution that fits.
 
-## What You Need to Include:
+## Areas of Improvement
 
-1. Ensure that your code includes the necessary modifications to meet the challenge requirements.
-2. Your GitHub repository should contain the updated code files.
+- Using descriptive variable names: I need to start using more meaningful variable names that describe what the variable is used for as this will make my code easier to read and understand.
+- I could start handling errors properly by logging them as this will help me to debug any issue that could arise.
 
-## How We'll Assess Your Work:
+# Overall Learning Experience
 
-1. We will review your GitHub repository to ensure that it contains the updated code files.
-2. We will assess the modifications made to the code to verify that they effectively meet the challenge requirements.
-3. We will consider the commit history and meaningful commit messages to evaluate your coding process.
-
-This challenge will test your ability to manipulate arrays and objects, use the `map()` function for data transformation, and dynamically update the DOM based on data. Good luck, and may your mix be truly awesome!
-
-
-
-
-
-
-
+- I found learning about JavaScript arrays and the map() function to be a valuable experience. I want to check out other built-in array methods like "reduce()", "every()", and "some()", as well as learning about advanced features. I believe that the more I practice and code, the more I'll learn and grow as a developer.
