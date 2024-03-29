@@ -27,18 +27,84 @@
     // Object containing each Guardian's preferred genre
     const guardians = {
       "Star-Lord": "Rock",
-      Gamora: "Pop",
+      "Gamora": "Pop",
       // Add preferences for Drax, Rocket, and Groot
-      Drax: "Lo-fi",
-      Rocket: "Metal",
-      Groot: "Electro-House",
+      "Drax": "Lo-fi",
+      "Rocket": "Metal",
+      "Groot": "Electro-House",
     };
     // Function to generate playlist based on preferred genre
-    function generatePlaylist(guardians, songs) {
-      // Use the map() function to create playlists for each Guardian
-      // Your code here
-    }
+function generatePlaylist(guardians, songs) { // Object.entries(): This method is used to convert an object into an array of its key-value pairs. In this case, guardians is the object being converted.
+  // Use the map() function to create playlists for each Guardian
+  const playlists = Object.entries(guardians).map(([name, genre]) => { // The destructuring assignment [name, genre] extracts the name and genre from object.
+    // Filter the songs array based on the specified genre
+    const songsOfPreferredGenre = songs.filter(song => song.genre === genre); // Here, it filters songs based on whether their genre matches the genre extracted from guardians.
 
-    // Call generatePlaylist and display the playlists for each Guardian
-    generatePlaylist(guardians, songs);
-  
+    // Generate a random playlist of 3 songs
+    const playlist = songsOfPreferredGenre
+
+    // Add the guardian's name as the first element of the playlist
+    playlist.unshift({ name }); // it adds an object containing the name of the playlist to the beginning of the playlist array.
+
+    return playlist;
+  });
+
+  // Call function to display the playlists
+  displayPlaylists(playlists);
+}
+
+// Helper function to display the playlists
+// Arrow Functions (ES6): A concise way to write functions in JavaScript. Perfect for short functions and passing them as arguments.
+function displayPlaylists(playlists) {
+// Create a container div for playlists
+const playlistsDiv = document.createElement('div');
+playlistsDiv.id = 'playlists';
+
+// Loop through each playlist
+playlists.forEach((playlist) => {
+  // Create a playlist container div
+  const playlistDiv = document.createElement('div');
+  playlistDiv.classList.add('playlist');
+
+  // Create a title h2
+  const title = document.createElement('h2');
+  title.textContent = playlist[0].name + "'s Playlist";
+  playlistDiv.appendChild(title)
+
+  // Create an unordered list
+  const list = document.createElement('div');
+
+  // Loop through each song in the playlist
+  playlist.slice(1).forEach((song) => {
+    // Create a list items
+    const listItem = document.createElement('div');
+    listItem.className = 'song'; // creating space between the songs on the playlist 
+
+    // Set the song title and artist
+    const songTitle = document.createElement('span');
+    songTitle.textContent = `${song.title}`; // spacing created on line 96 to avoiding underlining until 'by ${song.artist}`. 
+    songTitle.className = 'song-title';
+    const songArtist = document.createElement('span');
+    songArtist.textContent = ` by ${song.artist}`;
+
+    // Append the title and artist to the list item
+    listItem.appendChild(songTitle);
+    listItem.appendChild(songArtist);
+
+    // Append the list item to the list
+    list.appendChild(listItem);
+  });
+
+  // Append the list to the playlist container
+  playlistDiv.appendChild(list);
+
+  // Append the playlist container to the container div
+  playlistsDiv.appendChild(playlistDiv);
+});
+
+// Append the container div to the document
+document.body.appendChild(playlistsDiv);
+}
+
+// calling  the generatePlaylist function
+generatePlaylist(guardians, songs);
